@@ -59,4 +59,14 @@ if ("IntersectionObserver" in window) {
   targets.forEach((t) => io.observe(t));
 } else targets.forEach((t) => t.classList.add("in"));
 
+// Carrusel de proyectos del hero: se duplica solo para que el bucle sea continuo
+(() => {
+  const track = document.getElementById("mq");
+  if (!track) return;
+  const set = track.querySelector(".mq__set");
+  const clone = set.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  track.appendChild(clone);
+})();
+
 document.getElementById("year").textContent = new Date().getFullYear();

@@ -20,7 +20,7 @@
 
 <header class="nav" id="top">
   <div class="wrap nav__in">
-    <a href="#top" class="brand" aria-label="Olivion, inicio"><img src="img/logo-h-dark.png" alt="Olivion" height="34"></a>
+    <a href="#top" class="brand" aria-label="Olivion, inicio"><img src="img/logo-h-light.png" alt="Olivion" height="34"></a>
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
@@ -34,46 +34,38 @@
 
 <main>
 <!-- HERO -->
-<section class="hero">
-  <div class="wrap hero__in">
-    <div class="hero__copy">
-      <p class="eyebrow"><span class="dot"></span>Desarrollo web y software a medida</p>
-      <h1>Tu negocio merece una web que <em>trabaje por ti.</em></h1>
-      <p class="lead">Creamos páginas web y soluciones digitales para PYMEs: claras, rápidas y pensadas para que más clientes te encuentren y te escriban.</p>
-      <div class="hero__cta">
-        <a href="#contacto" class="btn">Cotiza tu proyecto <span aria-hidden="true">→</span></a>
-        <a href="#trabajos" class="btn btn--ghost">Ver ejemplos</a>
-      </div>
-      <ul class="ticks">
-        <li>Diseño a tu medida</li>
-        <li>Se ve bien en celular</li>
-        <li>Botón directo a WhatsApp</li>
-      </ul>
-    </div>
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="gridbg"></span></div>
 
-    <div class="hero__art" aria-hidden="true">
-      <div class="browser">
-        <div class="browser__bar"><i></i><i></i><i></i><span>tunegocio.pe</span></div>
-        <div class="browser__body">
-          <div class="mock-nav"><b></b><span></span><span></span><span></span><em></em></div>
-          <div class="mock-hero">
-            <div>
-              <div class="line w70"></div><div class="line w90"></div><div class="line w50 thin"></div>
-              <div class="pill"></div>
-            </div>
-            <img src="img/icon-light.png" alt="">
-          </div>
-          <div class="mock-cards"><div></div><div></div><div></div></div>
-        </div>
+  <div class="wrap hero__c">
+    <p class="eyebrow eyebrow--l"><span class="dot dot--live"></span>Desarrollo web y software a medida</p>
+    <h1>Tu negocio merece una web que <em>trabaje por ti.</em></h1>
+    <p class="lead">Creamos páginas web y soluciones digitales para PYMEs: claras, rápidas y pensadas para que más clientes te encuentren y te escriban.</p>
+    <div class="hero__cta">
+      <a href="#contacto" class="btn">Cotiza tu proyecto <span aria-hidden="true">→</span></a>
+      <a href="#trabajos" class="btn btn--ghost">Ver ejemplos</a>
+    </div>
+    <ul class="ticks">
+      <li>Diseño a tu medida</li>
+      <li>Se ve bien en celular</li>
+      <li>Botón directo a WhatsApp</li>
+    </ul>
+  </div>
+
+  <!-- CARRUSEL DE PROYECTOS
+       Para agregar un proyecto real, copia una <figure class="mq__card"> y pon dentro tu captura:
+       <figure class="mq__card"><img src="img/proyecto-nombre.jpg" alt="Nombre del cliente"></figure>
+       Se repite solo en bucle; no hace falta duplicar nada. -->
+  <div class="mq" role="region" aria-label="Ejemplos de diseño">
+    <div class="mq__track" id="mq">
+      <div class="mq__set">
+        <figure class="mq__card"><img src="img/demo-gym.jpg" alt="Ejemplo de web para gimnasio"><figcaption>Gimnasio</figcaption></figure>
+        <figure class="mq__card m" style="--a:#f97316;--b:#7c2d12" aria-label="Ejemplo de web para restaurante"><div class="m__bar"><i></i><i></i><i></i></div><div class="m__hero"><span class="m__l1"></span><span class="m__l2"></span><span class="m__btn"></span></div><div class="m__row"><i></i><i></i><i></i></div><figcaption>Restaurante</figcaption></figure>
+        <figure class="mq__card m" style="--a:#a855f7;--b:#4c1d95" aria-label="Ejemplo de tienda online"><div class="m__bar"><i></i><i></i><i></i></div><div class="m__hero"><span class="m__l1"></span><span class="m__l2"></span><span class="m__btn"></span></div><div class="m__row"><i></i><i></i><i></i></div><figcaption>Tienda online</figcaption></figure>
+        <figure class="mq__card m" style="--a:#14b8a6;--b:#134e4a" aria-label="Ejemplo de web para clínica"><div class="m__bar"><i></i><i></i><i></i></div><div class="m__hero"><span class="m__l1"></span><span class="m__l2"></span><span class="m__btn"></span></div><div class="m__row"><i></i><i></i><i></i></div><figcaption>Clínica</figcaption></figure>
+        <figure class="mq__card m" style="--a:#22c55e;--b:#14532d" aria-label="Ejemplo de web inmobiliaria"><div class="m__bar"><i></i><i></i><i></i></div><div class="m__hero"><span class="m__l1"></span><span class="m__l2"></span><span class="m__btn"></span></div><div class="m__row"><i></i><i></i><i></i></div><figcaption>Inmobiliaria</figcaption></figure>
+        <figure class="mq__card m" style="--a:#3b82f6;--b:#0a1226" aria-label="Ejemplo de web corporativa"><div class="m__bar"><i></i><i></i><i></i></div><div class="m__hero"><span class="m__l1"></span><span class="m__l2"></span><span class="m__btn"></span></div><div class="m__row"><i></i><i></i><i></i></div><figcaption>Empresa</figcaption></figure>
       </div>
-      <div class="phone">
-        <div class="phone__notch"></div>
-        <div class="line w70"></div><div class="line w90"></div><div class="line w50 thin"></div>
-        <div class="pill"></div>
-        <div class="phone__card"></div>
-      </div>
-      <div class="chip chip--a"><span class="ok"></span> Publicada en línea</div>
-      <div class="chip chip--b">+ Consultas por WhatsApp</div>
     </div>
   </div>
 </section>
