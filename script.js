@@ -2,7 +2,7 @@
 // Escribe tu número de WhatsApp con código de país, sin "+" ni espacios (Perú = 51). Ej: "51987654321"
 // Mientras esté vacío, los botones abren el chat de Instagram @olivion.pe.
 const WHATSAPP = "51948448130";
-const IG_DM = "https://ig.me/m/olivionperu";
+const IG_DM = "https://ig.me/m/olivion.pe";
 // =========================
 
 const waLink = (text) =>
@@ -49,7 +49,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Aparición suave al hacer scroll
-const targets = document.querySelectorAll(".card,.steps li,.work__copy,.work__img,.about > *,.cta__in > *,.sec__head,.strip__in div,.q-step,.receipt,.faq__head,.faq__item");
+const targets = document.querySelectorAll(".card,.steps li,.work__copy,.work__img,.about > *,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
 targets.forEach((t) => t.classList.add("rv"));
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(
@@ -130,73 +130,9 @@ if ("IntersectionObserver" in window) {
   });
 })();
 
-// ===== Cotizador =====
-(() => {
-  const form = document.querySelector(".quote__form");
-  if (!form) return;
-
-  // PRECIOS: escribe el monto en soles (número) para mostrarlo en el recibo. Con null se muestra "A cotizar".
-  const PRICES = {
-    tipo: { landing: null, web: null, tienda: null, medida: null },
-    extra: { blog: null, reservas: null, idioma: null, catalogo: null },
-    mensual: { mantenimiento: null },
-  };
-  const LABELS = {
-    tipo: {
-      landing: ["Landing", "Una sola página"],
-      web: ["Web completa", "Varias páginas"],
-      tienda: ["Tienda o catálogo", "Carrito o cotización"],
-      medida: ["Software a medida", "Un sistema propio"],
-    },
-    extra: { blog: ["Blog"], reservas: ["Reservas o citas"], idioma: ["Segundo idioma"], catalogo: ["Catálogo de productos"] },
-    mensual: { mantenimiento: ["Soporte y mantenimiento"] },
-  };
-  const money = (n) => "S/ " + n.toLocaleString("es-PE");
-  const $ = (id) => document.getElementById(id);
-  const lines = $("qLines"), total = $("qTotal"), note = $("qNote"), cta = $("qCta");
-  $("qDate").textContent = new Date().toLocaleDateString("es-PE", { day: "numeric", month: "long", year: "numeric" }).toUpperCase();
-
-  const render = () => {
-    const tipo = form.querySelector("input[name=tipo]:checked").value;
-    const extras = [...form.querySelectorAll("input[name=extra]:checked")].map((i) => i.value);
-    const mens = [...form.querySelectorAll("input[name=mensual]:checked")].map((i) => i.value);
-    const items = [["tipo", tipo, false], ...extras.map((v) => ["extra", v, false]), ...mens.map((v) => ["mensual", v, true])];
-
-    lines.innerHTML = "";
-    let sum = 0, unknown = false, mSum = 0, mUnknown = false;
-    items.forEach(([g, v, monthly]) => {
-      const [name, sub] = LABELS[g][v];
-      const price = PRICES[g][v];
-      const row = document.createElement("div");
-      row.className = "r-line";
-      const left = document.createElement("span");
-      left.textContent = (g === "extra" ? "+ " : "") + name;
-      const detail = monthly ? "Cada mes" : sub;
-      if (detail) { const s = document.createElement("small"); s.textContent = detail; left.appendChild(s); }
-      const right = document.createElement("em");
-      right.textContent = price == null ? "A cotizar" : money(price) + (monthly ? "/mes" : "");
-      row.append(left, right);
-      lines.appendChild(row);
-      if (monthly) { price == null ? (mUnknown = true) : (mSum += price); }
-      else { price == null ? (unknown = true) : (sum += price); }
-    });
-
-    total.textContent = unknown ? "A cotizar" : money(sum);
-    total.classList.remove("bump"); void total.offsetWidth; total.classList.add("bump");
-    const extraNote = mens.length ? (mUnknown ? " Mensualidad a cotizar." : ` + ${money(mSum)} al mes.`) : "";
-    note.textContent = unknown || mUnknown
-      ? "Cotización referencial. Confirmamos precio y plazo por WhatsApp."
-      : "Cotización referencial." + extraNote + " Confirmamos plazo por WhatsApp.";
-
-    const parts = items.filter((i) => !i[2]).map(([g, v]) => LABELS[g][v][0]);
-    let msg = `Hola Olivion, armé mi cotización: ${parts[0]}`;
-    if (parts.length > 1) msg += ` con ${parts.slice(1).join(", ")}`;
-    if (mens.length) msg += `. Mensual: ${mens.map((v) => LABELS.mensual[v][0]).join(", ")}`;
-    msg += ". ¿Me pueden enviar el precio y el plazo?";
-    cta.href = waLink(msg);
-  };
-  form.addEventListener("change", render);
-  render();
-})();
+// Botones "Cotiza aquí" de los paquetes -> WhatsApp con el paquete elegido
+document.querySelectorAll("[data-plan]").forEach((a) => {
+  a.href = waLink(`Hola Olivion, me interesa el paquete ${a.dataset.plan}. ¿Me pueden dar más información?`);
+});
 
 document.getElementById("year").textContent = new Date().getFullYear();
