@@ -43,7 +43,6 @@ ul,ol{list-style:none}
 .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;will-change:transform}
 .o1{width:560px;height:560px;background:radial-gradient(circle,#1a6bff,transparent 65%);top:-220px;left:50%;margin-left:-280px;animation:drift1 16s ease-in-out infinite}
 .o2{width:420px;height:420px;background:radial-gradient(circle,#3a4dff,transparent 65%);bottom:-120px;right:-80px;opacity:.35;animation:drift2 19s ease-in-out infinite}
-.gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 30%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 60% 55% at 50% 30%,#000 20%,transparent 75%)}
 @keyframes drift1{50%{transform:translate(-70px,40px) scale(1.12)}}
 @keyframes drift2{50%{transform:translate(-60px,-40px) scale(1.15)}}
 
@@ -78,10 +77,10 @@ h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
 .mq:hover .mq__track{animation-play-state:paused}
 .mq__set{display:flex;gap:1.2rem;padding-right:1.2rem}
 @keyframes mq{to{transform:translateX(-50%)}}
-.mq__card{position:relative;flex:none;width:clamp(240px,26vw,350px);aspect-ratio:16/11;border-radius:16px;overflow:hidden;background:#0d1731;border:1px solid rgba(255,255,255,.14);box-shadow:0 26px 50px -22px rgba(0,0,0,.85);transform:rotate(-2.5deg);transition:transform .35s ease}
+.mq__card{position:relative;flex:none;width:clamp(250px,29vw,390px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#0d1731;border:1px solid rgba(255,255,255,.14);box-shadow:0 26px 50px -22px rgba(0,0,0,.85);transform:rotate(-2.5deg);transition:transform .35s ease}
 .mq__card:nth-child(even){transform:rotate(3deg) translateY(14px)}
 .mq__card:hover{transform:rotate(0) scale(1.05);z-index:2}
-.mq__card img{width:100%;height:100%;object-fit:cover}
+.mq__card img{width:100%;height:100%;object-fit:cover;object-position:left top}
 .mq__card figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,18,38,.78);backdrop-filter:blur(6px);color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:99px;border:1px solid rgba(255,255,255,.15)}
 /* tarjetas de ejemplo (sin captura real) */
 .m{display:flex;flex-direction:column;padding:0;background:#fff}
