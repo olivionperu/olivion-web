@@ -49,7 +49,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Aparición suave al hacer scroll
-const targets = document.querySelectorAll(".card,.steps li,.work__copy,.work__img,.about > *,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
+const targets = document.querySelectorAll(".card,.work__copy,.work__img,.about > *,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
 targets.forEach((t) => t.classList.add("rv"));
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(
@@ -59,14 +59,99 @@ if ("IntersectionObserver" in window) {
   targets.forEach((t) => io.observe(t));
 } else targets.forEach((t) => t.classList.add("in"));
 
-// Carrusel de proyectos del hero: se duplica solo para que el bucle sea continuo
+// Carrusel de proyectos: avanza solo y se puede arrastrar con el dedo o el puntero
 (() => {
+  const mq = document.querySelector(".mq");
   const track = document.getElementById("mq");
-  if (!track) return;
-  const set = track.querySelector(".mq__set");
-  const clone = set.cloneNode(true);
-  clone.setAttribute("aria-hidden", "true");
-  track.appendChild(clone);
+  if (!mq || !track) return;
+  const first = track.querySelector(".mq__set");
+  const SPEED = 36; // px por segundo
+  let W = 0, pos = 0, vel = 0, dragging = false, hover = false, lastX = 0, lastT = 0;
+
+  const build = () => {
+    track.querySelectorAll(".mq__set[data-clone]").forEach((n) => n.remove());
+    W = first.offsetWidth;
+    if (!W) return;
+    const copies = Math.ceil(mq.offsetWidth / W) + 1;
+    for (let i = 0; i < copies; i++) {
+      const c = first.cloneNode(true);
+      c.dataset.clone = "1";
+      c.setAttribute("aria-hidden", "true");
+      track.appendChild(c);
+    }
+  };
+  build();
+  addEventListener("load", build);
+  addEventListener("resize", build);
+
+  const apply = () => {
+    if (W) { pos %= W; if (pos > 0) pos -= W; }
+    track.style.transform = `translate3d(${pos}px,0,0)`;
+  };
+  let prev = performance.now();
+  const tick = (now) => {
+    const dt = Math.min((now - prev) / 1000, 0.05);
+    prev = now;
+    if (!dragging) {
+      if (Math.abs(vel) > 8) { pos += vel * dt; vel *= Math.pow(0.02, dt); }
+      else if (!hover) pos -= SPEED * dt;
+    }
+    apply();
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+
+  mq.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    dragging = true; vel = 0; lastX = e.clientX; lastT = performance.now();
+    mq.classList.add("is-drag");
+    try { mq.setPointerCapture(e.pointerId); } catch (_) {}
+  });
+  mq.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const now = performance.now();
+    const dx = e.clientX - lastX;
+    pos += dx;
+    apply();
+    vel = (dx / Math.max(now - lastT, 1)) * 1000 * 0.6 + vel * 0.4;
+    lastX = e.clientX; lastT = now;
+  });
+  const end = () => { dragging = false; mq.classList.remove("is-drag"); };
+  ["pointerup", "pointercancel", "lostpointercapture"].forEach((t) => mq.addEventListener(t, end));
+  mq.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
+  mq.addEventListener("pointerleave", () => { hover = false; });
+  mq.addEventListener("dragstart", (e) => e.preventDefault());
+})();
+
+// Camino de proceso: la línea se llena al bajar y cada paso se enciende
+(() => {
+  const path = document.getElementById("path");
+  if (!path) return;
+  const steps = [...path.querySelectorAll(".step")];
+  const nodes = steps.map((s) => s.querySelector(".step__node"));
+  let y0 = 29, h = 0, centers = [];
+
+  const measure = () => {
+    const pr = path.getBoundingClientRect();
+    const cs = nodes.map((n) => { const r = n.getBoundingClientRect(); return r.top - pr.top + r.height / 2; });
+    y0 = cs[0]; h = cs[cs.length - 1] - cs[0];
+    centers = cs.map((c) => c - y0);
+    path.style.setProperty("--y0", y0 + "px");
+    path.style.setProperty("--h", h + "px");
+    update();
+  };
+  const update = () => {
+    const pr = path.getBoundingClientRect();
+    const raw = innerHeight * 0.55 - pr.top - y0;
+    path.style.setProperty("--head", Math.min(Math.max(raw, 0), h) + "px");
+    let last = -1;
+    steps.forEach((s, i) => { const on = raw >= centers[i] - 2; s.classList.toggle("on", on); if (on) last = i; });
+    steps.forEach((s, i) => s.classList.toggle("now", i === last));
+  };
+  addEventListener("scroll", update, { passive: true });
+  addEventListener("resize", measure);
+  addEventListener("load", measure);
+  measure();
 })();
 
 // ===== Cursor interactivo =====
@@ -94,7 +179,7 @@ if ("IntersectionObserver" in window) {
 
   const linkSel = "a,button,summary,label,select,[data-cursor]";
   document.addEventListener("mouseover", (e) => {
-    const card = e.target.closest && e.target.closest(".mq__card");
+    const card = e.target.closest && e.target.closest(".mq");
     const link = e.target.closest && e.target.closest(linkSel);
     ring.classList.toggle("is-card", !!card);
     ring.classList.toggle("is-link", !!link && !card);

@@ -17,12 +17,18 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.9 7L4 20l1.1-4A8 8 0 1 1 20 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c.3 2.6 2.4 4.9 5.5 5.5l1-1.4-1.8-.9-.7.6a4 4 0 0 1-1.8-1.8l.6-.7-.9-1.8z" fill="currentColor"/></symbol>
+</svg>
+
 
 <header class="nav" id="top">
   <div class="wrap nav__in">
     <a href="#top" class="brand" aria-label="Olivion, inicio"><img src="img/logo-h-light.png" alt="Olivion" height="34"></a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
       <a href="#trabajos">Diseños</a>
       <a href="#paquetes">Paquetes</a>
@@ -81,53 +87,39 @@
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section class="sec" id="servicios">
-  <div class="wrap">
-    <div class="sec__head">
-      <p class="eyebrow"><span class="dot"></span>Servicios</p>
-      <h2>Todo lo que tu negocio necesita para crecer en línea</h2>
-      <p class="muted">Desde una web de presentación hasta software a la medida de tu operación.</p>
-    </div>
-    <div class="grid4">
-      <article class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
-        <h3>Páginas web personalizadas</h3>
-        <p>Sitios institucionales y landing pages con tu identidad, optimizados para convertir visitas en clientes.</p>
-      </article>
-      <article class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg></div>
-        <h3>Tiendas online</h3>
-        <p>Catálogo, carrito y pedidos por WhatsApp o pasarela de pago, para vender las 24 horas.</p>
-      </article>
-      <article class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h0a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
-        <h3>Software a medida</h3>
-        <p>Sistemas y herramientas pensadas para tu forma de trabajar: pedidos, reservas, inventarios y más.</p>
-      </article>
-      <article class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19a3 3 0 0 1-3 3h-2"/></svg></div>
-        <h3>Soporte y mantenimiento</h3>
-        <p>Cambios, mejoras y ayuda técnica para que tu web siga siempre actualizada y funcionando.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- PROCESO -->
 <section class="sec sec--dark" id="proceso">
   <div class="wrap">
-    <div class="sec__head">
+    <div class="sec__head sec__head--c">
       <p class="eyebrow eyebrow--l"><span class="dot"></span>Cómo trabajamos</p>
-      <h2>De tu idea a tu web publicada en 4 pasos</h2>
-      <p class="muted">Un proceso simple, sin tecnicismos y con tu opinión en cada etapa.</p>
+      <h2>Tu web en 4 pasos</h2>
+      <p class="muted">Simple, claro y sin tecnicismos.</p>
     </div>
-    <ol class="steps">
-      <li><span>01</span><h3>Conversamos</h3><p>Nos cuentas de tu negocio, qué vendes y a quién quieres llegar.</p></li>
-      <li><span>02</span><h3>Diseñamos</h3><p>Creamos una propuesta visual con tu logo, colores y contenido.</p></li>
-      <li><span>03</span><h3>Desarrollamos</h3><p>Programamos tu sitio rápido, seguro y adaptado a celulares.</p></li>
-      <li><span>04</span><h3>Publicamos</h3><p>Lo lanzamos en línea y te acompañamos con los ajustes que necesites.</p></li>
-    </ol>
+
+    <div class="path" id="path">
+      <div class="path__line" aria-hidden="true">
+        <i class="path__fill"></i>
+        <span class="path__runner"><img src="img/icon-light.png" alt=""></span>
+      </div>
+      <ol class="path__steps">
+        <li class="step">
+          <span class="step__node">1</span>
+          <div class="step__card"><h3>Conversamos</h3><p>Nos cuentas qué necesitas.</p></div>
+        </li>
+        <li class="step">
+          <span class="step__node">2</span>
+          <div class="step__card"><h3>Diseñamos</h3><p>Te mostramos la propuesta con tu marca.</p></div>
+        </li>
+        <li class="step">
+          <span class="step__node">3</span>
+          <div class="step__card"><h3>Desarrollamos</h3><p>Construimos tu web, rápida y adaptada a celular.</p></div>
+        </li>
+        <li class="step">
+          <span class="step__node">4</span>
+          <div class="step__card"><h3>Publicamos</h3><p>La lanzamos en línea y te acompañamos.</p></div>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -301,8 +293,9 @@
       <h2>Hagamos crecer tu negocio en línea</h2>
       <p>Cuéntanos qué necesitas y te respondemos con una propuesta a tu medida. Sin compromiso.</p>
       <div class="cta__links">
-        <a data-contact href="https://ig.me/m/olivion.pe" target="_blank" rel="noopener" class="btn btn--wa">Escribir por WhatsApp</a>
-        <a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener" class="btn btn--line">@olivion.pe</a>
+        <a data-contact href="https://ig.me/m/olivion.pe" target="_blank" rel="noopener" class="btn btn--wa"><svg class="sico" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+        <a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener" class="btn btn--line"><svg class="sico" aria-hidden="true"><use href="#i-ig"/></svg>@olivion.pe</a>
+        <a href="https://www.tiktok.com/@olivionperu" target="_blank" rel="noopener" class="btn btn--line"><svg class="sico" aria-hidden="true"><use href="#i-tt"/></svg>@olivionperu</a>
       </div>
     </div>
     <form class="form" id="form" novalidate>
@@ -329,7 +322,7 @@
   <div class="wrap foot__in">
     <img src="img/logo-h-light.png" alt="Olivion" height="34">
     <p>Desarrollo web y software a medida para PYMEs.</p>
-    <div class="foot__social"><a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@olivionperu" target="_blank" rel="noopener">TikTok</a><a href="mailto:olivionperu@gmail.com">olivionperu@gmail.com</a></div>
+    <div class="foot__social"><a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener"><svg class="sico" aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a><a href="https://www.tiktok.com/@olivionperu" target="_blank" rel="noopener"><svg class="sico" aria-hidden="true"><use href="#i-tt"/></svg>TikTok</a><a href="mailto:olivionperu@gmail.com"><svg class="sico" aria-hidden="true"><use href="#i-mail"/></svg>olivionperu@gmail.com</a></div>
     <small>© <span id="year">2026</span> Olivion. Perú.</small>
   </div>
 </footer>
@@ -339,15 +332,9 @@
 </a>
 
 <div class="social-dock" aria-label="Redes sociales de Olivion">
-  <a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener" aria-label="Instagram de Olivion" data-cursor>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
-  </a>
-  <a href="https://www.tiktok.com/@olivionperu" target="_blank" rel="noopener" aria-label="TikTok de Olivion" data-cursor>
-    <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-  </a>
-  <a href="mailto:olivionperu@gmail.com" aria-label="Escríbenos a olivionperu@gmail.com" title="olivionperu@gmail.com" data-cursor>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 6 8-6"/></svg>
-  </a>
+  <a href="https://www.instagram.com/olivion.pe/" target="_blank" rel="noopener" aria-label="Instagram de Olivion" title="Instagram" data-cursor><svg class="sico" aria-hidden="true"><use href="#i-ig"/></svg></a>
+  <a href="https://www.tiktok.com/@olivionperu" target="_blank" rel="noopener" aria-label="TikTok de Olivion" title="TikTok" data-cursor><svg class="sico" aria-hidden="true"><use href="#i-tt"/></svg></a>
+  <a href="mailto:olivionperu@gmail.com" aria-label="Escríbenos a olivionperu@gmail.com" title="olivionperu@gmail.com" data-cursor><svg class="sico" aria-hidden="true"><use href="#i-mail"/></svg></a>
 </div>
 
 <div class="cursor-ring" aria-hidden="true"></div>
