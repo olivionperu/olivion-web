@@ -41,11 +41,11 @@
     <a href="#top" class="brand" aria-label="Olivion, inicio"><img src="img/logo-h-light.png" alt="Olivion" height="34"></a>
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#proceso">Proceso</a>
-      <a href="#trabajos">Diseños</a>
+      <a href="#trabajos">Prototipos</a>
       <a href="#paquetes">Paquetes</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#preguntas">Preguntas</a>
-      <a href="#contacto" class="btn btn--sm menu__cta">Cotiza tu proyecto</a>
+      <a href="#contacto" class="btn btn--sm menu__cta" data-demo target="_blank" rel="noopener">Demo gratis</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
@@ -61,8 +61,8 @@
     <h1>Tu negocio merece una web que <em>trabaje por ti.</em></h1>
     <p class="lead">Creamos páginas web y soluciones digitales para PYMEs: claras, rápidas y pensadas para que más clientes te encuentren y te escriban.</p>
     <div class="hero__cta">
-      <a href="#contacto" class="btn">Cotiza tu proyecto <span aria-hidden="true">→</span></a>
-      <a href="#trabajos" class="btn btn--ghost">Ver ejemplos</a>
+      <a href="#contacto" class="btn" data-demo target="_blank" rel="noopener">Pide tu demo gratis <span aria-hidden="true">→</span></a>
+      <a href="#trabajos" class="btn btn--ghost">Ver prototipos</a>
     </div>
     <ul class="ticks">
       <li>Diseño a tu medida</li>
@@ -75,7 +75,7 @@
        Para agregar un proyecto real, copia una <figure class="mq__card"> y pon dentro tu captura:
        <figure class="mq__card"><img src="img/proyecto-nombre.jpg" alt="Nombre del cliente"></figure>
        Se repite solo en bucle; no hace falta duplicar nada. -->
-  <div class="mq" role="region" aria-label="Ejemplos de diseño">
+  <div class="mq" role="region" aria-label="Prototipos por rubro">
     <div class="mq__track" id="mq">
       <div class="mq__set">
         <figure class="mq__card"><img src="img/proyecto-gimnasio.jpg" alt="Web de un gimnasio con clases y planes"><figcaption>Gimnasio</figcaption></figure>
@@ -138,20 +138,45 @@
 <section class="sec" id="trabajos">
   <div class="wrap work">
     <div class="work__copy">
-      <p class="eyebrow"><span class="dot"></span>Ejemplos de diseño</p>
-      <h2>Webs que se ven tan bien como tu negocio</h2>
-      <p class="muted">Un adelanto de lo que podemos crear: diseños modernos, con menú claro, secciones ordenadas y contacto directo por WhatsApp. Cada proyecto se adapta a tu marca.</p>
+      <p class="eyebrow"><span class="dot"></span>Prototipos por rubro</p>
+      <h2>Mira cómo se vería tu negocio en línea</h2>
+      <p class="muted">Estos son prototipos que diseñé para mostrar lo que puedo hacer en cada rubro. ¿Quieres uno con tu propio negocio? Te lo armo gratis, con tu logo y tus colores, y sin compromiso.</p>
       <ul class="check">
         <li>Gimnasios y centros deportivos</li>
         <li>Restaurantes y cafeterías</li>
         <li>Negocios de servicios y empresas locales</li>
       </ul>
-      <a href="#contacto" class="btn">Quiero mi web <span aria-hidden="true">→</span></a>
-      <p class="note">Algunos de nuestros diseños.</p>
+      <a href="#contacto" class="btn" data-demo target="_blank" rel="noopener">Pide tu demo gratis <span aria-hidden="true">→</span></a>
+      <p class="note">Prototipos de demostración.</p>
     </div>
     <figure class="work__img">
       <img src="img/demo-gym.jpg" alt="Ejemplo de diseño de página web para un gimnasio, en computadora y celular" loading="lazy">
     </figure>
+  </div>
+</section>
+
+<!-- CLIENTES FUNDADORES -->
+<section class="sec sec--dark" id="fundadores">
+  <div class="wrap fund">
+    <div class="fund__copy">
+      <p class="eyebrow eyebrow--l"><span class="dot"></span>Clientes fundadores</p>
+      <h2>Busco mis primeros 3 clientes fundadores</h2>
+      <p class="muted">Si tu negocio está en Lima, hagamos tu web con condiciones especiales. Trabajo cada proyecto personalmente, por eso los cupos son pocos.</p>
+      <ul class="fund__list">
+        <li>Prototipo gratis de tu negocio antes de decidir</li>
+        <li>Precio especial de lanzamiento</li>
+        <li>Atención directa del fundador, de principio a fin</li>
+        <li>Un ajuste incluido después de publicar</li>
+      </ul>
+      <p class="fund__give"><b>A cambio:</b> tu opinión sincera y permiso para mostrar el resultado como caso.</p>
+      <a class="btn" data-fund href="#contacto" target="_blank" rel="noopener">Quiero un cupo <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="fund__slots" aria-label="Cupos de cliente fundador">
+      <div class="slot"><span>1</span><div><b>Cupo 1</b><small><i class="live"></i>Disponible</small></div></div>
+      <div class="slot"><span>2</span><div><b>Cupo 2</b><small><i class="live"></i>Disponible</small></div></div>
+      <div class="slot"><span>3</span><div><b>Cupo 3</b><small><i class="live"></i>Disponible</small></div></div>
+    </div>
   </div>
 </section>
 
@@ -251,7 +276,7 @@
       <p class="eyebrow"><span class="dot"></span>Nosotros</p>
       <h2>Hola, soy Pedro. Vamos a hacer crecer tu marca.</h2>
       <p>Tengo 23 años, estudio Ingeniería de Software en la UTP y me apasiona emprender. Creé Olivion para brindar una <strong>solución original a las nuevas y pequeñas empresas</strong> de Lima y de todo el Perú: ayudar a las marcas a mejorar sus servicios y a que más clientes las encuentren y les escriban.</p>
-      <p>Ya tengo proyectos orientados a empresas como centros terapéuticos, restaurantes, gimnasios y más. En cada uno busco lo mismo:</p>
+      <p>He diseñado prototipos para rubros como centros terapéuticos, restaurantes, gimnasios y más, y hoy busco a mis primeros clientes. En cada uno busco lo mismo:</p>
       <ul class="traits">
         <li><b>Que se vea como tu marca</b><span>Colores, tipografía y estilo propios, no una plantilla repetida.</span></li>
         <li><b>Que el cliente te escriba</b><span>Menú claro y botones directos a WhatsApp para pedir, reservar o cotizar.</span></li>
@@ -273,6 +298,10 @@
     </div>
     <div class="faq__list">
       <details class="faq__item" name="faq" open>
+        <summary>¿Qué es el demo gratis?</summary>
+        <p>Es un prototipo de tu web con tu logo, tus colores y la información pública de tu negocio, para que veas cómo quedaría antes de decidir. Es gratis y sin compromiso.</p>
+      </details>
+      <details class="faq__item" name="faq">
         <summary>¿Cuánto cuesta una página web?</summary>
         <p>Depende de lo que necesites: una landing, una web completa, una tienda o un sistema a medida. Mira los paquetes de arriba o escríbenos y te enviamos una propuesta a tu medida.</p>
       </details>

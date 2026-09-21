@@ -430,3 +430,19 @@ html{scroll-padding-top:100px}
   .founder-wrap{grid-template-columns:1fr;gap:2.4rem}
   .founder{position:static;max-width:420px;margin:0 auto;width:100%}
 }
+
+/* ===== CLIENTES FUNDADORES ===== */
+.fund{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.fund__list{display:grid;gap:.75rem;margin:1.5rem 0 1.3rem;color:#c9d6f0}
+.fund__list li{display:flex;gap:.7rem;align-items:flex-start}
+.fund__list li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.14);color:#8fbcff;font-size:.75rem;font-weight:800;display:grid;place-items:center;margin-top:.1rem}
+.fund__give{color:#9fb4dc;font-size:.95rem;margin-bottom:1.7rem}
+.fund__give b{color:#fff}
+.fund__slots{display:grid;gap:.9rem}
+.slot{display:flex;align-items:center;gap:1.1rem;padding:1.15rem 1.4rem;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 44px -26px rgba(0,0,0,.75);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.slot:hover{transform:translateX(6px)}
+.slot>span{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.2rem;color:#fff;background:linear-gradient(180deg,#5a9eff,#1a6bff);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 0 0 6px rgba(26,107,255,.22)}
+.slot b{display:block;font-size:1.05rem}
+.slot small{display:flex;align-items:center;gap:.45rem;color:#9fb4dc;font-size:.85rem;font-weight:600}
+.slot .live{width:8px;height:8px;border-radius:50%;background:#35e07a;box-shadow:0 0 0 0 rgba(53,224,122,.6);animation:ping 2s infinite}
+@media (max-width:1000px){.fund{grid-template-columns:1fr;gap:2.4rem}}

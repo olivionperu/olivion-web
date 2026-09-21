@@ -19,6 +19,14 @@ document.querySelectorAll("[data-contact]").forEach((a) => {
   }
 });
 
+// Botones de "demo gratis" y "cupo fundador" -> WhatsApp con mensaje listo
+document.querySelectorAll("[data-demo]").forEach((a) => {
+  a.href = waLink("Hola Olivion, quiero mi demo gratis. Mi negocio es: ");
+});
+document.querySelectorAll("[data-fund]").forEach((a) => {
+  a.href = waLink("Hola Olivion, quiero postular a un cupo de cliente fundador. Mi negocio es: ");
+});
+
 // Menú móvil
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
@@ -49,7 +57,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Aparición suave al hacer scroll
-const targets = document.querySelectorAll(".card,.work__copy,.work__img,.about > *,.founder,.founder__story,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
+const targets = document.querySelectorAll(".card,.work__copy,.work__img,.about > *,.founder,.founder__story,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.fund__copy,.slot,.faq__head,.faq__item");
 targets.forEach((t) => t.classList.add("rv"));
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(
