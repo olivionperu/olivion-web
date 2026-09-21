@@ -418,10 +418,6 @@ html{scroll-padding-top:100px}
 .founder__role{color:var(--blue-d);font-weight:700;font-size:.92rem;margin-top:.15rem}
 .founder__tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;margin:1rem 0 1.2rem}
 .founder__tags li{padding:.3rem .8rem;border-radius:99px;background:var(--sky);color:var(--blue-d);font-size:.78rem;font-weight:700}
-.founder__social{display:flex;justify-content:center;gap:.7rem}
-.founder__social .stack__a{width:46px;height:46px}
-.founder__social .sk{width:24px;height:24px}
-.founder__social .stack__a--gm .sk{width:28px;height:28px}
 .founder__story h2{margin-bottom:1.2rem}
 .founder__story p{color:var(--muted);font-size:1.05rem;margin-bottom:1rem}
 .founder__story strong{color:var(--ink)}
