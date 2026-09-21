@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Generador de demos | Olivion</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a1226;--blue:#1a6bff;--blue-d:#0f55d6;--line:#e3e9f4;--muted:#5b6785;--soft:#f5f8fd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--ink);color:#fff;min-height:100vh;display:grid;place-items:center;padding:24px 16px;
+  background:radial-gradient(700px 420px at 50% -10%,rgba(26,107,255,.35),transparent 65%),var(--ink)}
+.card{width:min(560px,100%);background:#fff;color:var(--ink);border-radius:24px;padding:1.8rem;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+img{height:30px;width:auto;margin-bottom:1rem}
+h1{font-size:1.5rem;letter-spacing:-.02em}
+p.sub{color:var(--muted);font-size:.95rem;margin:.3rem 0 1.4rem}
+label{display:grid;gap:.35rem;font-size:.82rem;font-weight:700;margin-bottom:1rem}
+input,select{font:inherit;font-weight:500;padding:.7rem .9rem;border:1.5px solid var(--line);border-radius:12px;background:var(--soft);width:100%}
+input:focus,select:focus{outline:none;border-color:var(--blue);background:#fff}
+input[type=color]{padding:.2rem;height:46px;cursor:pointer}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.out{background:var(--soft);border:1.5px dashed #bcd0f3;border-radius:14px;padding:.9rem 1rem;font-size:.82rem;word-break:break-all;color:var(--blue-d);margin:.4rem 0 1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+button,a.b{font:inherit;font-weight:800;border:0;cursor:pointer;padding:.8rem 1.3rem;border-radius:99px;background:var(--blue);color:#fff;text-decoration:none;display:inline-block}
+button.alt,a.alt{background:#fff;color:var(--blue-d);border:1.5px solid var(--line)}
+.msg{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+.msg b{color:var(--ink)}
+.ok{color:#178a4a;font-weight:700;margin-left:.4rem;font-size:.85rem}
+</style>
+</head>
+<body>
+<main class="card">
+  <img src="../img/logo-h-dark.png" alt="Olivion">
+  <h1>Generador de demos personalizados</h1>
+  <p class="sub">Escribe el nombre del negocio y copia el enlace. El prototipo se adapta solo.</p>
+
+  <label>Tipo de negocio
+    <select id="tipo"><option value="veterinaria">Veterinaria</option></select>
+  </label>
+  <label>Nombre del negocio
+    <input id="n" type="text" placeholder="Ej. Veterinaria San Roque" maxlength="40" autocomplete="off">
+  </label>
+  <div class="row">
+    <label>Distrito
+      <input id="d" type="text" placeholder="Ej. Surco" maxlength="30" autocomplete="off">
+    </label>
+    <label>Color de la marca
+      <input id="c" type="color" value="#0f8f83">
+    </label>
+  </div>
+  <label>WhatsApp del negocio (opcional)
+    <input id="w" type="text" placeholder="51999999999" inputmode="numeric" autocomplete="off">
+  </label>
+
+  <div class="out" id="out"></div>
+  <div class="btns">
+    <button id="copy">Copiar enlace</button>
+    <a class="b alt" id="open" href="#" target="_blank" rel="noopener">Abrir demo</a>
+    <span class="ok" id="ok" hidden>¡Copiado!</span>
+  </div>
+
+  <p class="msg"><b>Mensaje sugerido:</b> «Hola, soy Pedro de Olivion. Te preparé este demo de cómo se vería la web de <span id="m">tu negocio</span>: <span id="ml">[enlace]</span>. Sin compromiso, ¿te lo muestro completo?»</p>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const base = location.origin + location.pathname.replace(/\/?$/, "/");
+const build = () => {
+  const p = new URLSearchParams();
+  if ($("n").value.trim()) p.set("n", $("n").value.trim());
+  if ($("d").value.trim()) p.set("d", $("d").value.trim());
+  p.set("c", $("c").value.replace("#", ""));
+  const w = $("w").value.replace(/\D/g, "");
+  if (w) p.set("w", w);
+  const url = base + $("tipo").value + "/?" + p.toString();
+  $("out").textContent = url; $("open").href = url;
+  $("m").textContent = $("n").value.trim() || "tu negocio"; $("ml").textContent = url;
+  return url;
+};
+["n", "d", "c", "w", "tipo"].forEach((id) => $(id).addEventListener("input", build));
+$("copy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(build()); $("ok").hidden = false; setTimeout(() => ($("ok").hidden = true), 1800); }
+  catch (_) { const r = document.createRange(); r.selectNode($("out")); getSelection().removeAllRanges(); getSelection().addRange(r); }
+});
+build();
+</script>
+</body>
+</html>

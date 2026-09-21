@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Huella Viva | Veterinaria (prototipo de Olivion)</title>
+<meta name="description" content="Prototipo de demostración de página web para una veterinaria, diseñado por Olivion.">
+<link rel="icon" type="image/png" href="../../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="16.4" rx="5.2" ry="4.1"/><circle cx="5.3" cy="11.2" r="2.3"/><circle cx="9.2" cy="6.6" r="2.5"/><circle cx="14.8" cy="6.6" r="2.5"/><circle cx="18.7" cy="11.2" r="2.3"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.9 7L4 20l1.1-4A8 8 0 1 1 20 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c.3 2.6 2.4 4.9 5.5 5.5l1-1.4-1.8-.9-.7.6a4 4 0 0 1-1.8-1.8l.6-.7-.9-1.8z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="demo-bar">
+  <span>Prototipo de demostración diseñado por <b>Olivion</b><span id="forWho"></span></span>
+  <a data-olivion href="#" target="_blank" rel="noopener">Quiero uno para mi negocio →</a>
+</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#inicio"><svg class="ico" aria-hidden="true"><use href="#paw"/></svg><span data-brand>Huella Viva</span></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#como">Cómo agendar</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="btn btn--sm" data-wa href="#" target="_blank" rel="noopener">Agendar cita</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <p class="pill"><svg class="ico" aria-hidden="true"><use href="#paw"/></svg><span>Veterinaria en <b data-city>Lima</b></span></p>
+        <h1>Cuidamos a tu mejor amigo como si fuera de la familia.</h1>
+        <p class="lead">Consultas, vacunas, peluquería y emergencias para perros y gatos. Agenda tu cita en un minuto por WhatsApp.</p>
+        <div class="hero__cta">
+          <a class="btn" data-wa href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+          <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+        </div>
+        <ul class="chips">
+          <li>Atención con cita</li>
+          <li>Vacunas al día</li>
+          <li>Emergencias por WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 420 380" role="img">
+          <circle cx="215" cy="190" r="172" class="blob"/>
+          <g class="paws" opacity=".35">
+            <use href="#paw" x="30" y="40" width="34" height="34"/>
+            <use href="#paw" x="350" y="300" width="30" height="30"/>
+            <use href="#paw" x="360" y="40" width="26" height="26"/>
+            <use href="#paw" x="20" y="300" width="26" height="26"/>
+          </g>
+          <!-- gato -->
+          <ellipse cx="305" cy="258" rx="50" ry="42" fill="#b7bfcc"/>
+          <polygon points="255,146 266,92 294,128" fill="#b7bfcc"/><polygon points="264,140 270,108 285,130" fill="#ffb3bd"/>
+          <polygon points="348,146 337,92 309,128" fill="#b7bfcc"/><polygon points="339,140 333,108 318,130" fill="#ffb3bd"/>
+          <ellipse cx="302" cy="170" rx="54" ry="47" fill="#b7bfcc"/>
+          <path d="M302 126v14M287 129v10M317 129v10" stroke="#8f98a8" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="283" cy="166" rx="8" ry="9" fill="#ffd166"/><ellipse cx="321" cy="166" rx="8" ry="9" fill="#ffd166"/>
+          <ellipse cx="283" cy="166" rx="2.5" ry="7" fill="#2b1d12"/><ellipse cx="321" cy="166" rx="2.5" ry="7" fill="#2b1d12"/>
+          <path d="M302 179l-6-6h12z" fill="#ff7a8a"/>
+          <path d="M302 179v6q-8 8-14 2M302 185q8 8 14 2" stroke="#2b1d12" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <path d="M270 176l-26-5M270 182l-26 4M334 176l26-5M334 182l26 4" stroke="#8f98a8" stroke-width="2" stroke-linecap="round"/>
+          <!-- perro -->
+          <ellipse cx="160" cy="300" rx="64" ry="46" fill="#f2c48d"/>
+          <ellipse cx="98" cy="186" rx="28" ry="54" fill="#7a4a24" transform="rotate(20 98 186)"/>
+          <ellipse cx="222" cy="186" rx="28" ry="54" fill="#7a4a24" transform="rotate(-20 222 186)"/>
+          <ellipse cx="160" cy="200" rx="70" ry="66" fill="#f2c48d"/>
+          <ellipse cx="160" cy="232" rx="36" ry="28" fill="#fff1dc"/>
+          <circle cx="134" cy="188" r="7" fill="#2b1d12"/><circle cx="186" cy="188" r="7" fill="#2b1d12"/>
+          <circle cx="136" cy="185" r="2.3" fill="#fff"/><circle cx="188" cy="185" r="2.3" fill="#fff"/>
+          <ellipse cx="160" cy="220" rx="12" ry="8.5" fill="#2b1d12"/>
+          <path d="M160 228v9M160 237q-10 11 -19 2M160 237q10 11 19 2" stroke="#2b1d12" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M152 241q8 20 16 0z" fill="#ff7a8a"/>
+          <rect x="116" y="262" width="88" height="15" rx="7.5" class="collar"/>
+          <circle cx="160" cy="288" r="9" fill="#ffd166"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="servicios">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="eyebrow">Servicios</p>
+        <h2>Todo para su salud y bienestar</h2>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg></span><h3>Consulta general</h3><p>Revisión completa y orientación para el cuidado diario de tu mascota.</p></article>
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/></svg></span><h3>Vacunas y desparasitación</h3><p>Calendario al día para protegerlo de enfermedades y parásitos.</p></article>
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span><h3>Baño y peluquería</h3><p>Cuidado del pelaje, uñas y limpieza, con paciencia y mucho cariño.</p></article>
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><h3>Cirugías</h3><p>Procedimientos programados con seguimiento antes y después.</p></article>
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9V3"/></svg></span><h3>Exámenes y laboratorio</h3><p>Análisis para detectar a tiempo y tratar con precisión.</p></article>
+        <article class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><h3>Emergencias</h3><p>Escríbenos por WhatsApp y te orientamos de inmediato.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--tint" id="como">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="eyebrow">Cómo agendar</p>
+        <h2>Tu cita en 3 pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><span>1</span><div><h3>Escríbenos por WhatsApp</h3><p>Cuéntanos qué necesita tu mascota.</p></div></li>
+        <li><span>2</span><div><h3>Elige tu horario</h3><p>Te confirmamos el día y la hora.</p></div></li>
+        <li><span>3</span><div><h3>Ven con tu mascota</h3><p>Te atendemos con cariño y sin apuros.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="ubicacion">
+    <div class="wrap info">
+      <div class="info__card">
+        <h3>Horario de atención</h3>
+        <ul class="hours">
+          <li><span>Lunes a sábado</span><b>9:00 a. m. – 8:00 p. m.</b></li>
+          <li><span>Domingos</span><b>9:00 a. m. – 1:00 p. m.</b></li>
+          <li><span>Emergencias</span><b>Escríbenos por WhatsApp</b></li>
+        </ul>
+        <h3>Ubicación</h3>
+        <p class="addr">Av. Ejemplo 123, <span data-city>Lima</span></p>
+        <p class="small">Datos de ejemplo. Aquí va la dirección y el mapa reales de tu veterinaria.</p>
+      </div>
+      <div class="map" aria-hidden="true"><div><svg class="ico" aria-hidden="true"><use href="#paw"/></svg><b>Mapa de Google</b><span>Se muestra aquí, con tu ubicación real</span></div></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band__in">
+      <h2>¿Tu mascota necesita atención?</h2>
+      <p>Escríbenos y agenda hoy mismo.</p>
+      <a class="btn btn--light" data-wa href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span class="brand"><svg class="ico" aria-hidden="true"><use href="#paw"/></svg><span data-brand>Huella Viva</span></span>
+    <p>Prototipo de demostración con contenido de ejemplo. Diseñado por <a data-olivion href="#" target="_blank" rel="noopener">Olivion</a>, Lima, Perú.</p>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script src="demo.js"></script>
+</body>
+</html>
