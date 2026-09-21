@@ -49,7 +49,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Aparición suave al hacer scroll
-const targets = document.querySelectorAll(".card,.work__copy,.work__img,.about > *,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
+const targets = document.querySelectorAll(".card,.work__copy,.work__img,.about > *,.founder,.founder__story,.cta__in > *,.sec__head,.strip__in div,.plan,.plans__extra,.faq__head,.faq__item");
 targets.forEach((t) => t.classList.add("rv"));
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(
