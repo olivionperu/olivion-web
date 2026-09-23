@@ -395,7 +395,6 @@ html{scroll-padding-top:100px}
 .stack{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 .stack__a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .stack__a:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 16px 30px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.35)}
-.stack__a--wa{background:linear-gradient(180deg,#3ddc7e,#1fa855)}
 .stack__a--gm{background:#fff}
 .stack__a--ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
 .stack__a--tt{background:#000}
