@@ -672,3 +672,12 @@ html{scroll-padding-top:100px}
   .foot{padding-top:calc(1.6rem + var(--curve))}
 }
 .strip{padding-bottom:var(--curve)}
+/* cada curva es distinta */
+#nosotros{border-radius:50% 50% 0 0 / var(--curve) var(--curve) 0 0}
+#fundadores{border-radius:0 100% 0 0 / 0 var(--curve) 0 0}
+#paquetes{border-radius:100% 0 0 0 / var(--curve) 0 0 0}
+#proceso{border-radius:72% 28% 0 0 / var(--curve) calc(var(--curve) * .5) 0 0}
+#trabajos{border-radius:28% 72% 0 0 / calc(var(--curve) * .5) var(--curve) 0 0}
+#contacto{border-radius:60% 40% 0 0 / var(--curve) calc(var(--curve) * .3) 0 0}
+#preguntas{border-radius:0 100% 0 0 / 0 var(--curve) 0 0}
+.foot{border-radius:38% 62% 0 0 / calc(var(--curve) * .4) var(--curve) 0 0}
