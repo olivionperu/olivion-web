@@ -551,8 +551,6 @@ html{scroll-padding-top:100px}
   .form{gap:.7rem;padding:1.1rem}
   .form textarea{min-height:70px}
 
-  /* Solo WhatsApp flotante */
-  .stack__a{display:none}
   .foot{padding:1.6rem 0}
 }
 
@@ -690,3 +688,19 @@ html{scroll-padding-top:100px}
 .foot{-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2070C180%2096%20320%2030%20500%2034S760%2084%20880%2044S970%2014%201000%2024L1000%20100L0%20100Z%22%2F%3E%3C%2Fsvg%3E") 0 0/100% var(--curve) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--curve) - 1px)/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2070C180%2096%20320%2030%20500%2034S760%2084%20880%2044S970%2014%201000%2024L1000%20100L0%20100Z%22%2F%3E%3C%2Fsvg%3E") 0 0/100% var(--curve) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--curve) - 1px)/100% 100% no-repeat}
 .foot::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231a6bff%22%20stop-opacity%3D%22.9%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%237fb0ff%22%20stop-opacity%3D%22.9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231a6bff%22%20stop-opacity%3D%22.9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M0%2070C180%2096%20320%2030%20500%2034S760%2084%20880%2044S970%2014%201000%2024%22%20fill%3D%22none%22%20stroke%3D%22url(%23g)%22%20stroke-width%3D%224%22%20vector-effect%3D%22non-scaling-stroke%22%2F%3E%3C%2Fsvg%3E")}
 #nosotros::before,#fundadores::before,#paquetes::before,#proceso::before,#trabajos::before,#contacto::before,#preguntas::before,.foot::before{content:"";position:absolute;left:0;right:0;top:0;height:var(--curve);background-size:100% 100%;pointer-events:none;z-index:1}
+
+/* Contacto: redes solo con logo, centrado en movil; carrusel con mas aire abajo */
+.btn--ico{width:52px;height:52px;padding:0;justify-content:center}
+.btn--ico .sico{margin:0;width:24px;height:24px}
+.mq{padding-bottom:4rem}
+@media (max-width:760px){
+  .mq{padding-bottom:calc(var(--curve) + 4.5rem)}
+  .cta__copy{text-align:center}
+  .cta__links{justify-content:center;flex-direction:row;flex-wrap:wrap}
+  .cta__links .btn--wa{flex:1 1 100%;justify-content:center}
+  .form .btn--full{justify-content:center;margin-inline:auto}
+  .stack{gap:8px}
+  .stack__a{display:grid;width:42px;height:42px}
+  .stack__a .sk{width:22px;height:22px}
+  .stack__a--gm .sk{width:26px;height:26px}
+}
