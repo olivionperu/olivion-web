@@ -451,3 +451,34 @@ html{scroll-padding-top:100px}
 .slot small{display:flex;align-items:center;gap:.45rem;color:#9fb4dc;font-size:.85rem;font-weight:600}
 .slot .live{width:8px;height:8px;border-radius:50%;background:#35e07a;box-shadow:0 0 0 0 rgba(53,224,122,.6);animation:ping 2s infinite}
 @media (max-width:1000px){.fund{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ===== aviso de cookies ===== */
+.ck{position:fixed;left:16px;bottom:16px;z-index:90;max-width:440px;background:var(--ink);color:#d5def2;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:1.1rem 1.2rem;box-shadow:var(--shadow);font-size:.88rem;line-height:1.5}
+.ck a{color:#7fb0ff;text-decoration:underline}
+.ck__b{display:flex;gap:.6rem;margin-top:.8rem}
+.ck__b button{flex:1;cursor:pointer;font:inherit;font-weight:700;padding:.6rem 1rem;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff}
+.ck__b .ck__ok{background:var(--blue);border-color:var(--blue)}
+.ck__b button:hover{filter:brightness(1.15)}
+@media (max-width:560px){.ck{left:10px;right:10px;bottom:10px;max-width:none}}
+
+/* ===== enlaces legales del pie ===== */
+.foot__legal{width:100%;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.85rem}
+.foot__legal a,.foot__legal button{font:inherit;font-weight:600;color:#9fb0d4;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.foot__legal a:hover,.foot__legal button:hover{color:#fff}
+
+/* ===== paginas legales ===== */
+.legal{padding:3.5rem 0 4.5rem;background:var(--bg)}
+.legal__in{width:min(780px,100% - 32px);margin-inline:auto}
+.legal h1{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.2;margin-bottom:.4rem}
+.legal .upd{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.legal h2{font-size:1.2rem;margin:2rem 0 .6rem}
+.legal p,.legal li{color:#2a3554;margin-bottom:.7rem}
+.legal ul{list-style:disc;padding-left:1.3rem;margin-bottom:.8rem}
+.legal a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.legal table{width:100%;border-collapse:collapse;margin:.6rem 0 1.2rem;font-size:.92rem}
+.legal th,.legal td{border:1px solid var(--line);padding:.6rem .7rem;text-align:left;vertical-align:top}
+.legal th{background:var(--soft)}
+.legal__scroll{overflow-x:auto}
+.nf{min-height:70vh;display:grid;place-items:center;text-align:center;padding:3rem 1rem}
+.nf h1{font-size:clamp(3rem,10vw,6rem);color:var(--blue);line-height:1}
+.nf p{margin:.8rem 0 1.6rem;color:var(--muted)}
