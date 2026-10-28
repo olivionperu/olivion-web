@@ -275,3 +275,13 @@ document.querySelectorAll("[data-plan]").forEach((a) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Foto del fundador: aplica el estilo solo si la imagen carga; si falla, se oculta
+document.querySelectorAll("img[data-photo]").forEach((img) => {
+  const ok = () => img.parentNode.classList.add("has-photo");
+  if (img.complete && img.naturalWidth) ok();
+  else {
+    img.addEventListener("load", ok);
+    img.addEventListener("error", () => img.remove());
+  }
+});
