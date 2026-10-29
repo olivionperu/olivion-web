@@ -734,3 +734,24 @@ html{scroll-padding-top:100px}
   .stack__a .sk{width:22px;height:22px}
   .stack__a--gm .sk{width:26px;height:26px}
 }
+
+/* ===== clientes ===== */
+.client{display:grid;grid-template-columns:.95fr 1.05fr;gap:3rem;align-items:center;max-width:1060px;margin-inline:auto;padding:2.6rem;border-radius:26px;color:#fff;border:1px solid rgba(255,255,255,.08);background:radial-gradient(520px 320px at 92% 0,rgba(57,255,20,.16),transparent 62%),radial-gradient(420px 260px at 0 100%,rgba(26,107,255,.22),transparent 60%),var(--ink);box-shadow:var(--shadow)}
+.client__logo{width:min(250px,70%);height:auto;margin:0 0 1.2rem -.4rem}
+.client__info h3{font-size:1.55rem;line-height:1.2;margin-bottom:.7rem}
+.client__info p{color:#b8c6e4}
+.client__tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1.3rem 0 1.7rem}
+.client__tags li{font-size:.8rem;font-weight:700;padding:.35rem .85rem;border-radius:99px;color:#d7e3ff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
+.client__shots{position:relative;padding:0 2.2rem 2.4rem 0}
+.client__browser{border-radius:14px;overflow:hidden;background:#0b1020;border:1px solid rgba(255,255,255,.14);box-shadow:0 26px 60px -22px rgba(0,0,0,.8)}
+.client__bar{display:flex;align-items:center;gap:6px;padding:.55rem .8rem;background:#161d33}
+.client__bar i{width:9px;height:9px;border-radius:50%;background:#3a4262}
+.client__bar span{margin-left:.7rem;flex:1;max-width:15rem;font-size:.72rem;color:#9fb0d4;background:#0b1020;border-radius:99px;padding:.18rem .8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.client__browser img{display:block;width:100%;height:auto}
+.client__phone{position:absolute;right:0;bottom:0;width:27%;border-radius:22px;overflow:hidden;border:5px solid #05070f;background:#05070f;box-shadow:0 24px 50px -16px rgba(0,0,0,.85)}
+.client__phone img{display:block;width:100%;height:auto}
+@media (max-width:900px){
+  .client{grid-template-columns:1fr;gap:2rem;padding:1.8rem 1.4rem}
+  .client__shots{padding:0 1.4rem 1.6rem 0}
+  .client__phone{width:30%}
+}
