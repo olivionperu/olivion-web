@@ -67,8 +67,10 @@ const PIXEL_ID = "1660070089075500";
       '<a href="/cookies">Más información</a></p>' +
       '<div class="ck__b"><button type="button" class="ck__no">Rechazar</button><button type="button" class="ck__ok">Aceptar</button></div>';
     document.body.appendChild(d);
-    d.querySelector(".ck__ok").addEventListener("click", () => { save("granted"); grant(); d.remove(); });
-    d.querySelector(".ck__no").addEventListener("click", () => { save("denied"); revoke(); d.remove(); });
+    document.documentElement.classList.add("has-ck");
+    document.documentElement.style.setProperty("--ckh", d.offsetHeight + "px");
+    d.querySelector(".ck__ok").addEventListener("click", () => { save("granted"); grant(); d.remove(); document.documentElement.classList.remove("has-ck"); });
+    d.querySelector(".ck__no").addEventListener("click", () => { save("denied"); revoke(); d.remove(); document.documentElement.classList.remove("has-ck"); });
   };
 
   const state = read();

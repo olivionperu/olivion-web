@@ -83,11 +83,29 @@ form.addEventListener("input", paintBubble);
 form.addEventListener("change", paintBubble);
 paintBubble();
 
+// Mensaje de error accesible si falta el nombre
+const nombreErr = document.createElement("small");
+nombreErr.className = "form__err";
+nombreErr.id = "nombreErr";
+nombreErr.setAttribute("role", "alert");
+nombreErr.hidden = true;
+nombreErr.textContent = "Escribe tu nombre para continuar.";
+(form.nombre.closest("label") || form.nombre).after(nombreErr);
+form.nombre.setAttribute("aria-describedby", "nombreErr");
+form.nombre.addEventListener("input", () => {
+  if (!form.nombre.value.trim()) return;
+  form.nombre.classList.remove("err");
+  form.nombre.setAttribute("aria-invalid", "false");
+  nombreErr.hidden = true;
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const nombre = form.nombre;
   const vacio = !nombre.value.trim();
   nombre.classList.toggle("err", vacio);
+  nombre.setAttribute("aria-invalid", String(vacio));
+  nombreErr.hidden = !vacio;
   if (vacio) return nombre.focus();
   const msg = buildMsg();
   if (!WHATSAPP) { try { await navigator.clipboard.writeText(msg); } catch (_) {} }
